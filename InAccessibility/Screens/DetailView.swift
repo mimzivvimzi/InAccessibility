@@ -17,8 +17,21 @@ struct DetailView: View {
     
     let stock: Stock
     @State var selectedAlertItem: AlertItem?
-    
+    @Environment(\.presentationMode) var presentationMode
 
+    var toolbarItems: some ToolbarContent {
+        Group {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                  presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Image(systemName: "x.circle.fill")
+                }
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel("Close detail view")
+            }
+        }
+    }
     
     
     var body: some View {
@@ -28,6 +41,9 @@ struct DetailView: View {
                 description
                 buttons
             }
+            .toolbar(content: {
+                toolbarItems
+            })
             .padding(.horizontal)
             
             Text("Detailview")
@@ -97,8 +113,8 @@ struct DetailView: View {
     }
 }
 
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailView(stock: .example())
-    }
-}
+//struct DetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DetailView(stock: .example())
+//    }
+//}

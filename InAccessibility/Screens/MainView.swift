@@ -22,11 +22,8 @@ struct MainView: View {
                 toolbarItems
             })
             .sheet(item: $showDetailStock) { stock in
-                DetailView(stock: stock)
+              DetailView(stock: stock)
             }
-        }
-        .onAppear {
-          print("💙\(Stock.all()[0].stockPrice)")
         }
     }
 
@@ -56,7 +53,6 @@ struct MainView: View {
         }
         
     }
-    //(String(format: "%.2f", stock.stockPrice)
     
     var allStocksSection: some View {
         Section {
@@ -66,8 +62,6 @@ struct MainView: View {
                     .onTapGesture {
                         showDetailStock = stock
                     }
-                    .accessibilityLabel(stock.name)
-                    .accessibilityValue("\(Int(stock.stockPrice)) dollars and \(Int(round(stock.stockPrice.truncatingRemainder(dividingBy: 1)*100))) cents")
             }
         } header: {
             Text("All Stocks")
@@ -83,6 +77,7 @@ struct MainView: View {
                     Image(systemName: "gearshape.fill")
                 }
                 .accessibilityElement(children: .ignore)
+                .accessibilityLabel("Settings")
             }
         }
     }
