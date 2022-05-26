@@ -12,6 +12,8 @@ This was a really fun challenge! Here are some of the changes that I made.
 - Each stock cell is read aloud naturally in dollars and cents.
 - Hint to tap for more info.
   - Tapping the cell brings up the detail view with a close button. Otherwise, VoiceOver users cannot dismiss the sheet.
+
+https://user-images.githubusercontent.com/7575395/170516456-58f436b5-9fde-429d-9aa1-e1a072060840.mov
 - ![Voice over image](voiceover.PNG)
 
 ### Voice Control
@@ -21,3 +23,7 @@ This was a really fun challenge! Here are some of the changes that I made.
 ### Future Improvements
 - Next time, I would try to fix the info button. Currently, it is not tappable with Voice Control unless you say, "show grid."
 - I'll also research Dynamic Type. Even though the challenge has ended, I'll continue looking into how to improve the app for those with low vision.
+
+
+
+
