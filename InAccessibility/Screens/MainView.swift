@@ -36,6 +36,11 @@ struct MainView: View {
                     .onTapGesture {
                         showDetailStock = stock
                     }
+                    .accessibilityAction {
+                      showDetailStock = stock
+                    }
+                    .accessibilityLabel(stock.name)
+
             }
         } header: {
             HStack {
@@ -62,6 +67,10 @@ struct MainView: View {
                     .onTapGesture {
                         showDetailStock = stock
                     }
+                    .accessibilityAction {
+                      showDetailStock = stock
+                    }
+                    .accessibilityLabel(stock.name)
             }
         } header: {
             Text("All Stocks")

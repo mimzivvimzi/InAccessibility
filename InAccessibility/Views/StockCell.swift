@@ -33,6 +33,7 @@ struct StockCell: View {
                         }
                         .accessibilityElement(children: .ignore)
                         .accessibilityHint("Tap for more info")
+
                     
                     Image(systemName: "star.fill")
                         .foregroundColor(.yellow)
@@ -54,8 +55,8 @@ struct StockCell: View {
             .accessibilityHidden(true)
 
         }
-        .accessibilityLabel(Text(stock.name))
         .accessibilityValue("Current share price is \(Int(stock.stockPrice)) dollars and \(Int(round(stock.stockPrice.truncatingRemainder(dividingBy: 1)*100))) cents. \(goingUpInfo) about \(Int(stock.change)) points")
+        .accessibilityHint("Tap for more info")
         .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 8))
         .alert(isPresented: $showInfo) {
             Alert(title: Text(stock.name), message: Text("The stock price for \(stock.name) (\(stock.shortName)) is \(stock.stockPrice)."), dismissButton: .cancel())
@@ -68,3 +69,4 @@ struct StockCell_Previews: PreviewProvider {
         StockCell(stock: .example())
     }
 }
+
